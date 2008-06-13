@@ -177,20 +177,21 @@ var XMLParser = Class.create({
   //basic DOM creation from text via browser
   text_to_xml: function(text){
     try {
-      var xml = (document.all) ? new ActiveXObject("Microsoft.XMLDOM") : new DOMParser();
-      xml.async = false;
+      var xml = (Prototype.Browser.IE) ? new ActiveXObject("Microsoft.XMLDOM") : new DOMParser();
+      xml.async = false; //argh
     } catch(e) {
-      return "Error starting Parser";
+      return "Error starting a parser";
     }
     
     try {
-      if(document.all) {
+      if(Prototype.Browser.IE) {
         this.xml_doc = (xml.loadXML(text)) ? xml : null;
       } else {
         this.xml_doc = xml.parseFromString(text, "text/xml");
       }
     } catch(e) {
-      return "Error parsing XML";
+      if console { console.log(e); }
+      return "Error parsing the XML";
     }
     
     return this.xml_doc;

@@ -1,6 +1,6 @@
 # hypomodern prototype jxparser
 
-This is version 0.1 of a xml-to-json-to-xml parser that I am working on. I wanted something lightweight and tight, and with a MIT or similar license. I couldn't find anything that fit all of those bills, so here's the DIY version.
+This is version 0.1 of a xml-to-json-to-xml parser that I am working on. I wanted something lightweight and tight, and with a MIT or similar license. I couldn't find anything that fit all of those bills, so here's the DIY version. This software is designed for use with prototype, but could easily be ported to be framework-neutral.
 
 **This is version 0.1!** It takes XML and converts it to JSON. It ignores your attribute specifications (because I'm not sure how to handle them well and the projects I'm on don't need me to handle attributes, so...) and doesn't do a very good job typecasting. But hey, if what you need is some XML converted to JSON, it works. The file itself is littered with commentary, but here's the basics:
 
